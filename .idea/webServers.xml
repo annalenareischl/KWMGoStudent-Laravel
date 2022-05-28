@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="af202422-e0f4-4300-8e31-f1b78f2141b3" name="HETZNER" url="http://kwmgostudent.s1910456024.student.kwmhgb.at/">
+        <fileTransfer rootFolder="/usr/home/sstud832/public_html/KWMGOStudent/kwmgoServer" accessType="SFTP" host="s1910456024.student.kwmhgb.at" port="222" sshConfigId="c24542bd-c4cb-4bb5-818d-49bbc87bcac8" sshConfig="sstud832@s1910456024.student.kwmhgb.at:222 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
