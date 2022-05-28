@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\TimeslotUserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -53,6 +54,9 @@ Route::get('courses/identify/{cID}/timeslots/identify', [CourseController::class
 Route::get('courses/{semester}', [CourseController::class, 'findBySemester']);
 Route::get('courses/search/{searchTerm}', [CourseController::class, 'findBySearchTerm']);
 Route::post('course', [CourseController::class,'save']);
+
+
+Route::post('course/identify/{cID}/{timeslot_id}', [CourseController::class,'booking']);
 
 
 

@@ -31,9 +31,12 @@ class TimeslotsTableSeeder extends Seeder
         $timeslot->course()->associate($c);
         $timeslot->save();
 
-        $user=User::all()->pluck('id');
+
+        /*$user=User::all()->pluck('id');
+
         $timeslot->users()->sync($user);
         $timeslot->save();
+        */
 
     }
 }

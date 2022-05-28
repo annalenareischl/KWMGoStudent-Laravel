@@ -55,6 +55,8 @@ class CourseController extends Controller
                     ->orWhere('lastname', 'LIKE',  '%' . $searchTerm. '%');
             })->get();
     }
+
+
     public function save(Request $request) : JsonResponse{
         $request = $this->parseRequest($request);
         DB::beginTransaction();
