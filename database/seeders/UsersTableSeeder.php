@@ -15,72 +15,57 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $stud1 = new User;
-        $stud1->uID = "T1234";
-        $stud1->firstname = "Lena";
-        $stud1->lastname = "Lehrandra";
-        $stud1->email = "LL@web.de";
-        $stud1->password = bcrypt('secret');
-        $stud1->description = "Hallo liebe KWM-Studierende. Mein Name ist Theresa und ich gebe in versch. KWM Kursen Nachhilfe. Lasst uns zusammen Spaß haben.";
-        $stud1->is_teacher = false;
-        $stud1->semester = 6;
-        $stud1->save();
 
+
+        $t1 = new User;
+        $t1->uID = "T1";
+        $t1->firstname = "Klaas";
+        $t1->lastname = "Klar";
+        $t1->email = "Tkk@web.de";
+        $t1->password = bcrypt('passme1234');
+        $t1->description = "Hallo liebe KWM-Studierende. Mein Name ist Klaas und ich gebe in versch. KWM Kursen Nachhilfe. Lasst uns zusammen Spaß haben.";
+        $t1->is_teacher = true;
+        $t1->semester = 6;
+        $t1->save();
         $timeslots = Timeslot::all()->pluck('id');
-        $stud1->timeslots()->sync($timeslots);
-        $stud1->save();
+        $t1->timeslots()->sync($timeslots);
+        $t1->save();
 
 
-
-        $stud2 = new User;
-        $stud2->uID = "S1910456034";
-        $stud2->firstname = "Christina";
-        $stud2->lastname = "Wanke";
-        $stud2->email = "CW@web.de";
-        $stud2->password = bcrypt('secret');
-        $stud2->description = "Hallo, ich bin eine KWM Studierende und brauche Nachhilfe in OE und PE.";
-        $stud2->is_teacher = false;
-        $stud2->semester = 6;
-        $stud2->save();
-
-        //$stud2->timeslots()->sync($timeslots);
-        //$stud2->save();
+        $t2 = new User;
+        $t2->uID = "T2";
+        $t2->firstname = "Elsa";
+        $t2->lastname = "Eber";
+        $t2->email = "Tee@web.de";
+        $t2->password = bcrypt('passme1234');
+        $t2->description = "Hallo liebe KWM-Studierende. Mein Name ist Klaas und ich gebe in versch. KWM Kursen Nachhilfe. Lasst uns zusammen Spaß haben.";
+        $t2->is_teacher = true;
+        $t2->semester = 4;
+        $t2->save();
 
 
-/*
-        $teach1 = new User;
-        $teach1->uID = "S1710456012";
-        $teach1->firstname = "Heiner";
-        $teach1->lastname = "Weiner";
-        $teach1->email = "HW@web.de";
-        $teach1->password = bcrypt('secret');
-        $teach1->description = "HW ist in da house";
-        $teach1->is_teacher = true;
-        $teach1->semester = 6;
-        $teach1->save();
+        $s1 = new User;
+        $s1->uID = "S1";
+        $s1->firstname = "Michi";
+        $s1->lastname = "Müller";
+        $s1->email = "Smm@web.de";
+        $s1->password = bcrypt('passme1234');
+        $s1->description = "Hallo, ich bin eine KWM Studierende und brauche Nachhilfe in OE und PE.";
+        $s1->is_teacher = false;
+        $s1->semester = 4;
+        $s1->save();
 
-        //$teach1->timeslots()->sync($timeslots);
-        //$teach1->save();
-
-        $teach2 = new User;
-        $teach2->uID = "T2050";
-        $teach2->firstname = "Theresa";
-        $teach2->lastname = "Teacher";
-        $teach2->email = "TT@fhooe.at";
-        $teach2->password = bcrypt('passme1234');
-        $teach2->description = "Hallo! Ich gebe Nachhilfe in allen KWM Kursen";
-        $teach2->is_teacher = true;
-        $teach2->semester = 6;
-        $teach2->save();
-
-        //$timeslots = Timeslot::all()->pluck('id');
-        //$teach2->timeslots()->sync($timeslots);
-       // $teach2->save();
-
-        */
-
+        $s2 = new User;
+        $s2->uID = "S2";
+        $s2->firstname = "Kati";
+        $s2->lastname = "Kauer";
+        $s2->email = "Skk@web.de";
+        $s2->password = bcrypt('passme1234');
+        $s2->description = "Hallo, ich bin eine KWM Studierende und brauche Nachhilfe in OE und PE.";
+        $s2->is_teacher = false;
+        $s2->semester = 2;
+        $s2->save();
     }
-
 }
 
 

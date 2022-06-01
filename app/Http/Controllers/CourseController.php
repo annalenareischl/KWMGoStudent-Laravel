@@ -111,12 +111,12 @@ class CourseController extends Controller
 
     }
 
-    public function update(Request $request, string $id) : JsonResponse
+    public function update(Request $request, string $cID) : JsonResponse
     {
         DB::beginTransaction();
         try {
             $course = Course::with(['timeslot', 'user'])
-                ->where('id', $id)->first();
+                ->where('cID', $cID)->first();
             if ($course != null) {
                 $request = $this->parseRequest($request);
                 $course->update($request->all());
@@ -138,7 +138,7 @@ class CourseController extends Controller
             }
             DB::commit();
             $c = Course::with(['timeslot', 'user'])
-                ->where('id', $id)->first();
+                ->where('cID', $cID)->first();
             // return a vaild http response
             return response()->json($c, 201);
         }
