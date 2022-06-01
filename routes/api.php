@@ -31,20 +31,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
      * Student: Kurs buchen */
 Route::group(['middleware' => ['api', 'auth.jwt']], function (){
 
-    // PRIORITY: use token to get user information
     Route::post('/profile', [AuthController::class, 'me']);
-
-    // do business logic stuff (now you know the username, email, userId ...)
     Route::post('courses', [CourseController::class, 'save']);
 
-    //Route::delete('/courses/{cID}', [CourseController::class,'delete']);
     Route::delete('courses/{cID}', [CourseController::class,'delete']);
 
-    // logout should only be possible if user is already authenticated
     Route::post('auth/logout', [AuthController::class,'logout']);
 
 
-    Route::post('courses', [CourseController::class, 'save']);
+    //Route::post('courses', [CourseController::class, 'save']);
     Route::get('courses/{title}', [CourseController::class, 'findByTitle']);
     Route::get('courses/identify/{cID}', [CourseController::class, 'findBycID']);
     Route::get('courses/identify/{cID}/timeslots/identify', [CourseController::class, 'findByDateID']);
@@ -68,11 +63,8 @@ Route::group(['middleware' => ['api', 'auth.jwt']], function (){
     -> nicht mehr Funktionen
 */
 Route::post('auth/login', [AuthController::class, 'login']);
-Route:p:get('courses', [CourseController::class, 'index']);
+Route::get('courses', [CourseController::class, 'index']);
 
-
-
-//Route::post('auth/login', [AuthController::class, 'login']);
 
 
 
